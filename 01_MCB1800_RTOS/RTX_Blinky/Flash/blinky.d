@@ -9,3 +9,6 @@
 .\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\Device\Include\system_LPC18xx.h
 .\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_LED.h
 .\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1.2.0\Include\EventRecorder.h
+.\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\ARMCC\Bin\..\include\stdio.h
+.\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\ARMCC\Bin\..\include\stdlib.h
+.\flash\blinky.o: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\ARMCC\Bin\..\include\string.h

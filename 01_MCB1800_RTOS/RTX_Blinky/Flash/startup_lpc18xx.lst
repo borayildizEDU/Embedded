@@ -604,21 +604,20 @@ ARM Macro Assembler    Page 10
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\flash\startup_lpc18xx.d -o.\flash\startup_lpc18xx.o -IE:\Project
-s\JIRA\29_EventRecorder\Examples\00_MyDemo\03_MCB1800_RTOS_Blinky\RTX_Blinky\RT
-E\Compiler -IE:\Projects\JIRA\29_EventRecorder\Examples\00_MyDemo\03_MCB1800_RT
-OS_Blinky\RTX_Blinky\RTE\Device\LPC1857 -IE:\Projects\JIRA\29_EventRecorder\Exa
-mples\00_MyDemo\03_MCB1800_RTOS_Blinky\RTX_Blinky\RTE\_EventRecorder -IE:\KeilN
-ightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -
-IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\
-RTOS\RTX\INC -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM
-_Compiler\1.2.0\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PA
-CK\Keil\LPC1800_DFP\2.6.0\Device\Include -IE:\KeilNightlyBuilds\2016_11_11__13_
-30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\RTE_Driver -IE:\KeilNightlyBuilds\20
-16_11_11__13_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board --predefine="_
-_RTX SETA 1" --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 52
-2" --predefine="_RTE_ SETA 1" --predefine="LPC18xx SETA 1" --list=.\flash\start
-up_lpc18xx.lst RTE\Device\LPC1857\startup_LPC18xx.s
+ork --depend=.\flash\startup_lpc18xx.d -o.\flash\startup_lpc18xx.o -IE:\Git\bor
+ayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Compiler -IE:\Git\borayildiz
+EDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Device\LPC1857 -IE:\Git\borayildizE
+DU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\_EventRecorder -IE:\KeilNightlyBuild
+s\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -IE:\KeilNig
+htlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\IN
+C -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1
+.2.0\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC
+1800_DFP\2.6.0\Device\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\
+ARM\PACK\Keil\LPC1800_DFP\2.6.0\RTE_Driver -IE:\KeilNightlyBuilds\2016_11_11__1
+3_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board --predefine="__RTX SETA 1
+" --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 1" --predefi
+ne="LPC18xx SETA 1" --list=.\flash\startup_lpc18xx.lst RTE\Device\LPC1857\start
+up_LPC18xx.s
 
 
 
@@ -1352,4 +1351,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-414 symbols in table
+413 symbols in table

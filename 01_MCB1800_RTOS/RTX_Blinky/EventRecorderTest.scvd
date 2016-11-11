@@ -22,13 +22,14 @@
     </group>   
 
     <!-- Core events -->
-    <event id=" 0 + 0x0100" level="API"    property="led_thread"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Led Thread"/>
+    <event id=" 0 + 0x0100" level="API"    property="led_thread"             value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Led Thread"/>
     <event id=" 1 + 0x0100" level="API"    property="thread_01"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread01"/>
     <event id=" 2 + 0x0100" level="API"    property="thread_02"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread02"/> 
     <event id=" 3 + 0x0100" level="API"    property="thread_03"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread03"/>
     <event id=" 4 + 0x0100" level="API"    property="thread_04"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread04"/>
     <event id=" 5 + 0x0100" level="API"    property="thread_05"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread05"/>
     <event id=" 6 + 0x0100" level="API"    property="thread_06"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread06"/>
+    <event id=" 7 + 0x0100" level="API"    property="thread_status"          value="%t[val1]" info="ThreadStatus"/>
     
     <event id=" 0 + 0x0200" level="API"    property="led_thread"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Led Thread"/>
     <event id=" 1 + 0x0200" level="API"    property="thread_01"              value="ThreadCounter=%x[val1], GlobalCounter=%x[val2]" info="Thread01"/>

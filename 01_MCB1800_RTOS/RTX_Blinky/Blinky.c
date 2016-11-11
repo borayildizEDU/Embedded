@@ -7,16 +7,19 @@
  *      This code is part of the RealView Run-Time Library.
  *      Copyright (c) 2004-2014 KEIL - An ARM Company. All rights reserved.
  *---------------------------------------------------------------------------*/
-
+ 
 #include "cmsis_os.h"
 #include "LPC18xx.h"
 #include "Board_LED.h"
 #include "EventRecorder.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 #define EventRecorder_CID 0x0100
-
-const char str[32] = "Test";
 static unsigned int globalCounter;
+
 
 /* Threads */
 osThreadId tid_Thread_LED; 
@@ -26,6 +29,7 @@ osThreadId tid_Thread_03;
 osThreadId tid_Thread_04; 
 osThreadId tid_Thread_05; 
 osThreadId tid_Thread_06; 
+osThreadId tid_Thread_Status; 
 
 /*----------------------------------------------------------------------------
  *      'Thread_LED': Sample thread
@@ -229,6 +233,40 @@ void Thread_06 (void const *argument) {
   }
 }
 
+/*----------------------------------------------------------------------------
+ *      Thread 7 'Thread_Status': Writes latest status
+ *---------------------------------------------------------------------------*/
+void Thread_Status (void const *argument);                                                                         
+osThreadDef (Thread_Status, osPriorityNormal, 1, 0);                      
+
+int Init_Thread_Status(void) {
+
+  tid_Thread_Status = osThreadCreate (osThread(Thread_Status), NULL);
+  if(!tid_Thread_Status) return(-1);
+
+  return(0);
+}
+
+void Thread_Status (void const *argument) {
+	uint32_t threadCounter = 0;	
+	char string[1000];
+	
+
+	// Thread Loop
+  while (1) {
+		
+		osSignalWait(0x0001, osWaitForever);
+		sprintf(string, "Global Counter = %d", globalCounter);
+		EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));
+		
+		sprintf(string, "Test");
+		EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));		
+    
+    osThreadYield();                                                
+  }
+	
+}
+
 
 
 /*----------------------------------------------------------------------------
@@ -236,6 +274,7 @@ void Thread_06 (void const *argument) {
  *----------------------------------------------------------------------------*/
 int main (void) {
   globalCounter = 0;
+	
 
   osKernelInitialize ();                                            // initialize CMSIS-RTOS
 
@@ -249,7 +288,8 @@ int main (void) {
   Init_Thread_03();                                               
   Init_Thread_04();                                                
   Init_Thread_05();                                                
-  Init_Thread_06();                                                
+  Init_Thread_06();   
+	Init_Thread_Status();	
 
   osKernelStart ();                                                 // start thread execution
 	
@@ -260,6 +300,7 @@ int main (void) {
   for (;;) {                                                        // main must not be terminated!
     globalCounter++;
     osDelay(1000);
+
     osSignalSet(tid_Thread_LED, 0x0001);
     osSignalSet(tid_Thread_01, 0x0001);
     osSignalSet(tid_Thread_02, 0x0001);
@@ -267,5 +308,6 @@ int main (void) {
     osSignalSet(tid_Thread_04, 0x0001);
     osSignalSet(tid_Thread_05, 0x0001);
     osSignalSet(tid_Thread_06, 0x0001);
+		osSignalSet(tid_Thread_Status, 0x0001);
   }
 }
