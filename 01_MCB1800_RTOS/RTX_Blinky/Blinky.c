@@ -18,7 +18,6 @@
 
 
 #define EventRecorder_CID 0x0100
-static unsigned int globalCounter;
 
 /* Threads */
 osThreadId tid_Thread_LED; 
@@ -64,7 +63,7 @@ void Thread_LED (void const *argument) {
 			led_state = 0;
 		}
 		
-		EventRecord2((EventRecorder_CID | 0x00), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x00), threadCounter, threadCounter);
 		    
     osThreadYield();                                               
   }
@@ -91,7 +90,7 @@ void Thread_01 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x01), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x01), threadCounter, threadCounter);
   
     osThreadYield();                                                
   }
@@ -118,7 +117,7 @@ void Thread_02 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x02), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x02), threadCounter, threadCounter);
     
     osThreadYield();                                                
   }
@@ -145,7 +144,7 @@ void Thread_03 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x03), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x03), threadCounter, threadCounter);
     
     osThreadYield();                                                
   }
@@ -172,7 +171,7 @@ void Thread_04 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x04), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x04), threadCounter, threadCounter);
     
     osThreadYield();                                                
   }
@@ -199,7 +198,7 @@ void Thread_05 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x05), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x05), threadCounter, threadCounter);
     
     osThreadYield();                                                
   }
@@ -226,85 +225,43 @@ void Thread_06 (void const *argument) {
 		threadCounter++;
 		
 		osSignalWait(0x0001, osWaitForever);
-		EventRecord2((EventRecorder_CID | 0x06), threadCounter, globalCounter);
+		EventRecord2((EventRecorder_CID | 0x06), threadCounter, threadCounter);
     
     osThreadYield();                                                
   }
 }
-
-/*----------------------------------------------------------------------------
- *      Thread 7 'Thread_Status': Writes latest status
- *---------------------------------------------------------------------------*/
-void Thread_Status (void const *argument);                                                                         
-osThreadDef (Thread_Status, osPriorityNormal, 1, 0);                      
-
-int Init_Thread_Status(void) {
-
-  tid_Thread_Status = osThreadCreate (osThread(Thread_Status), NULL);
-  if(!tid_Thread_Status) return(-1);
-
-  return(0);
-}
-
-void Thread_Status (void const *argument) {
-	uint32_t threadCounter = 0;	
-	char string[1000];
-	
-	// Thread Loop
-  while (1) {
-		
-		osSignalWait(0x0001, osWaitForever);
-		
-		//sprintf(string, "Global Counter = %d", globalCounter);
-		//EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));
-		
-		printf("Test");
-		//sprintf(string, "Test");
-		//EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));		
-    
-    osThreadYield();                                                
-  }
-	
-}
-
-
 
 /*----------------------------------------------------------------------------
  * main: blink LED and check button state
  *----------------------------------------------------------------------------*/
 int main (void) {
-  globalCounter = 0;
-	
 
-  osKernelInitialize ();                                            // initialize CMSIS-RTOS
-
+  osKernelInitialize ();                                          
   SystemCoreClockUpdate();
-
-  LED_Initialize();                                                 // initalize LEDs
+  LED_Initialize();                                                 
 	
-  Init_Thread_LED();                                              
+  Init_Thread_LED(); 
+	/*	
   Init_Thread_01();                                             
   Init_Thread_02();                                              
   Init_Thread_03();                                               
   Init_Thread_04();                                                
   Init_Thread_05();                                                
   Init_Thread_06();   
-	Init_Thread_Status();	
+	*/
 
-  osKernelStart ();                                                 // start thread execution
+
+  osKernelStart ();                                                
 	
 	EventRecorderInitialize(EventRecordAll, 1);
   EventRecorderStop();
   EventRecorderStart();
 	
-  for (;;) {                                                        // main must not be terminated!
-    globalCounter++;
-    osDelay(1000);
-		
-	  printf("Global Counter = %d", globalCounter);
-		
-		/*
+  for (;;) {                                                      
+
+    osDelay(1000);				
     osSignalSet(tid_Thread_LED, 0x0001);
+		/*
     osSignalSet(tid_Thread_01, 0x0001);
     osSignalSet(tid_Thread_02, 0x0001);
     osSignalSet(tid_Thread_03, 0x0001);
@@ -313,6 +270,5 @@ int main (void) {
     osSignalSet(tid_Thread_06, 0x0001);
 		*/
 		
-		osSignalSet(tid_Thread_Status, 0x0001);
   }
 }
