@@ -438,16 +438,21 @@
       <Books>
         <Book>
           <Number>0</Number>
-          <Title>MCB1800 Schematics (MCB1800)</Title>
-          <Path>E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\Documents\MCB1800v1-3-schematics.pdf</Path>
+          <Title>Quick Start Guide (MCB1800)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\Documents\MCB1800_QSG.pdf</Path>
         </Book>
         <Book>
           <Number>1</Number>
-          <Title>User Manual (MCB1800)</Title>
-          <Path>E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\Documents\mcb1800.chm</Path>
+          <Title>MCB1800 Schematics (MCB1800)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\Documents\MCB1800v1-3-schematics.pdf</Path>
         </Book>
         <Book>
           <Number>2</Number>
+          <Title>User Manual (MCB1800)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\Documents\mcb1800.chm</Path>
+        </Book>
+        <Book>
+          <Number>3</Number>
           <Title>MCB1800 Evaluation Board Web Page (MCB1800)</Title>
           <Path>http://www.keil.com/mcb1800/</Path>
         </Book>
@@ -497,7 +502,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>ULP2CM3</Key>
-          <Name>-UP1445221 -O207 -S8 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP11 -TDX0 -TDD0 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD10000000 -FC1000 -FN2 -FF0LPC18xx43xx_512_BA.flm -FS01A000000 -FL080000 -FP0($$Device:LPC1857$Flash\LPC18xx43xx_512_BA.flm) -FF1LPC18xx43xx_512_BB.flm -FS11B000000 -FL180000 -FP1($$Device:LPC1857$Flash\LPC18xx43xx_512_BB.flm)</Name>
+          <Name>-UP1445221 -O207 -S8 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO19 -TC10000000 -TP11 -TDX0 -TDD0 -TDS8000 -TDT0 -TDC1F -TIE1 -TIP0 -FO15 -FD10000000 -FC1000 -FN2 -FF0LPC18xx43xx_512_BA.flm -FS01A000000 -FL080000 -FP0($$Device:LPC1857$Flash\LPC18xx43xx_512_BA.flm) -FF1LPC18xx43xx_512_BB.flm -FS11B000000 -FL180000 -FP1($$Device:LPC1857$Flash\LPC18xx43xx_512_BB.flm)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -577,7 +582,7 @@
         <aLa>0</aLa>
         <aPa1>0</aPa1>
         <AscS4>0</AscS4>
-        <aSer4>0</aSer4>
+        <aSer4>1</aSer4>
         <StkLoc>0</StkLoc>
         <TrcWin>0</TrcWin>
         <newCpu>0</newCpu>

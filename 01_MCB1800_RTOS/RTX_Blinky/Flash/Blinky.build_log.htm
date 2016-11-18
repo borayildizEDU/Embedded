@@ -29,44 +29,40 @@ Project File Date:  11/11/2016
 Rebuild target 'EventRecorder'
 assembling startup_LPC18xx.s...
 compiling LED_MCB1800.c...
+compiling retarget_io.c...
 compiling RTX_Conf_CM.c...
-compiling Blinky.c...
-Blinky.c(251): warning:  #177-D: variable "threadCounter"  was declared but never referenced
-  	uint32_t threadCounter = 0;	
-Blinky.c(313): warning:  #1-D: last line of file ends without a newline
-  }
-Blinky.c: 2 warnings, 0 errors
-compiling GPIO_LPC18xx.c...
 compiling SCU_LPC18xx.c...
+compiling GPIO_LPC18xx.c...
+compiling Blinky.c...
+Blinky.c(250): warning:  #177-D: variable "threadCounter"  was declared but never referenced
+  	uint32_t threadCounter = 0;	
+Blinky.c(251): warning:  #177-D: variable "string"  was declared but never referenced
+  	char string[1000];
+Blinky.c(318): warning:  #1-D: last line of file ends without a newline
+  }
+Blinky.c: 3 warnings, 0 errors
 compiling EventRecorder.c...
 compiling system_LPC18xx.c...
 linking...
-Program Size: Code=13020 RO-data=1156 RW-data=100 ZI-data=31456  
+Program Size: Code=16328 RO-data=1180 RW-data=120 ZI-data=31700  
 After Build - User command #1: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
 ELFDWT - Signature Creator V1.2.0.0
 COPYRIGHT Copyright (C) 2014-2016, ARM Ldt. and  ARM Germany GmbH
-*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF1B26
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF1D1E
 *** Processing completed, no Errors.
-".\Flash\Blinky.axf" - 0 Error(s), 2 Warning(s).
+".\Flash\Blinky.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.5.0.0.pack
-                ::CMSIS:RTOS:1.0 (API)
+                ARM::CMSIS:CORE:5.0.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: RTOS Version: 1.0
    * Component: CORE Version: 5.0.0
    * Component: Keil RTX Version: 4.81.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.ARM_Compiler.1.2.0.pack
-                Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.1.0
-                Keil ARM Compiler extensions
-   * Component: Event Recorder Variant: DAP Version: 1.1.0
-
-Package Vendor: Keil
-                http://www.keil.com/pack/Keil.LPC1800_DFP.2.6.0.pack
+                http://www.keil.com/pack/Keil.LPC1800_DFP.2.7.0-dev16.pack
                 Keil::Device:Startup:1.0.0
                 NXP LPC1800 Series Device Support, Drivers and Examples
    * Component: Startup Version: 1.0.0
@@ -80,6 +76,16 @@ Package Vendor: Keil
                 Keil MDK-ARM Professional Middleware for ARM Cortex-M based devices
    * Component: LED Version: 1.00
 
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.2.0.pack
+                Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.1.0
+                Keil ARM Compiler extensions
+   * Component: Event Recorder Variant: DAP Version: 1.1.0
+   * Component: STDIN Variant: ITM Version: 1.1.0
+   * Component: STDOUT Variant: ITM Version: 1.1.0
+   * Component: STDERR Variant: ITM Version: 1.1.0
+   * Component: RTOS Version: 1.0
+
 <h2>Collection of Component include folders:</h2>
   E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Compiler
   E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Device\LPC1857
@@ -87,35 +93,28 @@ Package Vendor: Keil
   E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include
   E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC
   E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1.2.0\Include
-  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\Device\Include
-  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.6.0\RTE_Driver
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\Device\Include
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\RTE_Driver
   E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ::CMSIS:RTOS:1.0 (API)
-
    * Component: ARM::CMSIS:CORE:5.0.0
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.0
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
-      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
       Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
       Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
-
-   * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.1.0
-      Include file:  Config\EventRecorderConf.h
-      Include file:  Include\EventRecorder.h
-      Source file:   Source\EventRecorder.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
 
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\ARM\startup_LPC18xx.s
@@ -135,6 +134,22 @@ Package Vendor: Keil
 
    * Component: ::Board Support:LED:1.00 (API)
       Include file:  Board\Board_LED.h
+
+   * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.1.0
+      Include file:  Config\EventRecorderConf.h
+      Include file:  Include\EventRecorder.h
+      Source file:   Source\EventRecorder.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:ITM:1.1.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:ITM:1.1.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDERR:ITM:1.1.0
+      Source file:   Source\retarget_io.c
+
+   * Component: ::CMSIS:RTOS:1.0 (API)
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

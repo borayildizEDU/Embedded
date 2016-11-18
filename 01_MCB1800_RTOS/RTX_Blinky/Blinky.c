@@ -20,7 +20,6 @@
 #define EventRecorder_CID 0x0100
 static unsigned int globalCounter;
 
-
 /* Threads */
 osThreadId tid_Thread_LED; 
 osThreadId tid_Thread_01; 
@@ -251,16 +250,17 @@ void Thread_Status (void const *argument) {
 	uint32_t threadCounter = 0;	
 	char string[1000];
 	
-
 	// Thread Loop
   while (1) {
 		
 		osSignalWait(0x0001, osWaitForever);
-		sprintf(string, "Global Counter = %d", globalCounter);
-		EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));
 		
-		sprintf(string, "Test");
-		EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));		
+		//sprintf(string, "Global Counter = %d", globalCounter);
+		//EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));
+		
+		printf("Test");
+		//sprintf(string, "Test");
+		//EventRecordData((EventRecorder_CID | 0x07), string, strlen(string));		
     
     osThreadYield();                                                
   }
@@ -300,7 +300,10 @@ int main (void) {
   for (;;) {                                                        // main must not be terminated!
     globalCounter++;
     osDelay(1000);
-
+		
+	  printf("Global Counter = %d", globalCounter);
+		
+		/*
     osSignalSet(tid_Thread_LED, 0x0001);
     osSignalSet(tid_Thread_01, 0x0001);
     osSignalSet(tid_Thread_02, 0x0001);
@@ -308,6 +311,8 @@ int main (void) {
     osSignalSet(tid_Thread_04, 0x0001);
     osSignalSet(tid_Thread_05, 0x0001);
     osSignalSet(tid_Thread_06, 0x0001);
+		*/
+		
 		osSignalSet(tid_Thread_Status, 0x0001);
   }
 }

@@ -612,12 +612,12 @@ s\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -IE:\KeilNig
 htlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\IN
 C -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1
 .2.0\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC
-1800_DFP\2.6.0\Device\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\
-ARM\PACK\Keil\LPC1800_DFP\2.6.0\RTE_Driver -IE:\KeilNightlyBuilds\2016_11_11__1
-3_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board --predefine="__RTX SETA 1
-" --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 1" --predefi
-ne="LPC18xx SETA 1" --list=.\flash\startup_lpc18xx.lst RTE\Device\LPC1857\start
-up_LPC18xx.s
+1800_DFP\2.7.0-dev16\Device\Include -IE:\KeilNightlyBuilds\2016_11_11__13_30_RE
+LEASE\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\RTE_Driver -IE:\KeilNightlyBuilds\2
+016_11_11__13_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board --predefine="
+__RTX SETA 1" --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 
+1" --predefine="LPC18xx SETA 1" --list=.\flash\startup_lpc18xx.lst RTE\Device\L
+PC1857\startup_LPC18xx.s
 
 
 
