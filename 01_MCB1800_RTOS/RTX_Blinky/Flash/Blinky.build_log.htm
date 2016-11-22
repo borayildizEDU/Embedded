@@ -3,9 +3,9 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.17.1.1
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Bora Yildiz, ARM Germany GmbH, LIC=MGXAU-B5CJZ-QMXDI-RIXMU-GT95F-MZ3I9
+IDE-Version: µVision V5.22.0.3
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Bora Yildiz, ARM, LIC=MGXAU-B5CJZ-QMXDI-RIXMU-GT95F-MZ3I9
  
 Tool Versions:
 Toolchain:       MDK-ARM Professional  Version: 5.17.0.9
@@ -28,20 +28,22 @@ Project File Date:  11/18/2016
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'EventRecorder'
 assembling startup_LPC18xx.s...
-compiling retarget_io.c...
+compiling OOP_Example.cpp...
 compiling LED_MCB1800.c...
+compiling retarget_io.c...
 compiling RTX_Conf_CM.c...
-compiling SCU_LPC18xx.c...
+Warning: C3910W: Old syntax, please use '--c99'.
 compiling GPIO_LPC18xx.c...
-compiling Blinky.c...
+compiling SCU_LPC18xx.c...
 compiling EventRecorder.c...
+compiling Blinky.cpp...
 compiling system_LPC18xx.c...
 linking...
-Program Size: Code=12160 RO-data=1140 RW-data=96 ZI-data=31452  
+Program Size: Code=12208 RO-data=1140 RW-data=100 ZI-data=31456  
 After Build - User command #1: C:\Keil_v5\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
 ELFDWT - Signature Creator V1.1.0.0
 COPYRIGHT Keil - An ARM Company, Copyright (C) 2014
-*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF221E
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF20F6
 *** Processing completed, no Errors.
 ".\Flash\Blinky.axf" - 0 Error(s), 0 Warning(s).
 
@@ -80,9 +82,9 @@ Package Vendor: Keil
    * Component: LED Version: 1.00
 
 <h2>Collection of Component include folders:</h2>
-  E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE
   E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Compiler
   E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Device\LPC1857
+  E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\_EventRecorder
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\Include
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\RTOS\RTX\INC
   C:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.2.0-Dev8\Include
@@ -143,7 +145,7 @@ Package Vendor: Keil
 
    * Component: ::Board Support:LED:1.00 (API)
       Include file:  Board\Board_LED.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

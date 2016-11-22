@@ -1,5 +1,6 @@
 --cpu Cortex-M3
 ".\flash\blinky.o"
+".\flash\oop_example.o"
 ".\flash\led_mcb1800.o"
 "C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
 ".\flash\rtx_conf_cm.o"

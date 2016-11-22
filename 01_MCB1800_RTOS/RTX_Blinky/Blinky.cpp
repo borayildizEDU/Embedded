@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "OOP_Example.h"
 
 
 #define EventRecorder_CID 0x0100
@@ -27,6 +28,9 @@ osThreadId tid_Thread_03;
 osThreadId tid_Thread_04; 
 osThreadId tid_Thread_05; 
 osThreadId tid_Thread_06; 
+
+/* Global Object */
+Foo foo1;
 
 /*----------------------------------------------------------------------------
  *      'Thread_LED': Sample thread
@@ -47,6 +51,7 @@ void Thread_LED (void const *argument) {
   uint32_t led_num    = 0;
 	uint32_t threadCounter = 0;
 	uint8_t led_state = 0;
+  int value = 0;
 
   while (1) {
 		threadCounter++;
@@ -62,7 +67,8 @@ void Thread_LED (void const *argument) {
 			led_state = 0;
 		}
 		
-		EventRecord2((EventRecorder_CID | 0x00), threadCounter, threadCounter);
+    value = foo1.get_value_private();
+		EventRecord2((EventRecorder_CID | 0x00), threadCounter, value);
 		    
     osThreadYield();                                               
   }
@@ -234,7 +240,8 @@ void Thread_06 (void const *argument) {
  * main: blink LED and check button state
  *----------------------------------------------------------------------------*/
 int main (void) {
-
+  int value = 0;
+  
   osKernelInitialize ();                                          
   SystemCoreClockUpdate();
   LED_Initialize();                                                 
@@ -255,9 +262,11 @@ int main (void) {
 	EventRecorderInitialize(EventRecordAll, 1);
   EventRecorderStop();
   EventRecorderStart();
+  
 	
-  for (;;) {                                                      
-
+  for (;;) {    
+    value = foo1.get_value_private();
+    foo1.set_value_private(++value);
     osDelay(1000);				
     osSignalSet(tid_Thread_LED, 0x0001);
 		/*

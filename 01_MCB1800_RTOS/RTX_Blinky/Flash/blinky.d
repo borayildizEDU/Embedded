@@ -1,4 +1,4 @@
-.\flash\blinky.o: Blinky.c
+.\flash\blinky.o: Blinky.cpp
 .\flash\blinky.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\flash\blinky.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\flash\blinky.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
@@ -12,3 +12,4 @@
 .\flash\blinky.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\flash\blinky.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\flash\blinky.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\flash\blinky.o: OOP_Example.h

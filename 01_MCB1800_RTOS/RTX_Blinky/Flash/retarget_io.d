@@ -5,4 +5,4 @@
 .\flash\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\flash\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 .\flash\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_sys.h
-.\flash\retarget_io.o: E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\RTE_Components.h
+.\flash\retarget_io.o: E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\_EventRecorder\RTE_Components.h
