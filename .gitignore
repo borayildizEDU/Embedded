@@ -50,9 +50,6 @@ Temporary Items
 *
 
 # But not these files...
-!.gitignore
-!*.cpp
-!*.c
-!*.h
+
 # ...even if they are in subdirectories
 !*/
