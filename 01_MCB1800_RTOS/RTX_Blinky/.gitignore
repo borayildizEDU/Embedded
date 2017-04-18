@@ -47,7 +47,7 @@ Temporary Items
 .apdisk
 
 # Ignore everything
-*.*
+*
 
 # But not these files...
 
