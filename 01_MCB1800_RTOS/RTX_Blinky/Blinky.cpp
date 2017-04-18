@@ -53,11 +53,12 @@ void Thread_Status (void const *argument) {
   uint32_t led_num    = 0;
 	uint32_t threadCounter = 0;
 	uint8_t led_state = 0;
-  int value = 0;
 
   while (1) {
 		threadCounter++;
-		osSignalWait(0x0001, osWaitForever);
+		
+		osSignalWait(0x0001, osWaitForever);	
+		EventRecord2((EventRecorder_CID | 0x00), threadCounter, threadCounter);
 		
 		// Toggle Led
 		if(!led_state){
@@ -67,11 +68,7 @@ void Thread_Status (void const *argument) {
 		else{
 			LED_Off(led_num);
 			led_state = 0;
-		}
-		
-    value = Foo1.GetValue();
-		EventRecord2((EventRecorder_CID | 0x00), threadCounter, value);
-    EventRecordData(EventRecorder_Print, "Test01", 6);
+		}		
 		    
     osThreadYield();                                               
   }
@@ -243,21 +240,19 @@ void Thread_06 (void const *argument) {
  * main: blink LED and check button state
  *----------------------------------------------------------------------------*/
 int main (void) {
-  int value = 0;
   
   osKernelInitialize ();                                          
   SystemCoreClockUpdate();
   LED_Initialize();                                                 
 	
   Init_Thread_Status(); 
-#if 0	
+
   Init_Thread_01();                                             
   Init_Thread_02();                                              
   Init_Thread_03();                                               
   Init_Thread_04();                                                
   Init_Thread_05();                                                
   Init_Thread_06();   
-#endif
 
 
   osKernelStart ();                                                
@@ -268,18 +263,29 @@ int main (void) {
   
 	
   for (;;) {    
-    value = Foo1.GetValue();
-    Foo1.SetValue(++value);
     osDelay(1000);				
     osSignalSet(tid_Thread_Status, 0x0001);
-#if 0
-    osSignalSet(tid_Thread_01, 0x0001);
-    osSignalSet(tid_Thread_02, 0x0001);
-    osSignalSet(tid_Thread_03, 0x0001);
-    osSignalSet(tid_Thread_04, 0x0001);
-    osSignalSet(tid_Thread_05, 0x0001);
-    osSignalSet(tid_Thread_06, 0x0001);
-#endif
 		
+		osDelay(1000);
+    osSignalSet(tid_Thread_01, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_02, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_03, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_04, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_05, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_06, 0x0001);
+		
+		osDelay(1000);
+		EventRecordData(EventRecorder_Print, "Test01", 6);
+
   }
 }
