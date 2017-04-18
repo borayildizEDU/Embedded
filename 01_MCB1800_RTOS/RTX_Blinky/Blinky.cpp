@@ -16,12 +16,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "OOP_Example.h"
+#include "SingleLinkedList.h"
 
 
-#define EventRecorder_CID 0x0100
+#define EventRecorder_CID     0x0100
+#define EventRecorder_Print   0x0107
 
 /* Threads */
-osThreadId tid_Thread_LED; 
+osThreadId tid_Thread_Status; 
 osThreadId tid_Thread_01; 
 osThreadId tid_Thread_02; 
 osThreadId tid_Thread_03; 
@@ -30,24 +32,24 @@ osThreadId tid_Thread_05;
 osThreadId tid_Thread_06; 
 
 /* Global Object */
-Foo foo1;
+Foo Foo1;
 
 /*----------------------------------------------------------------------------
- *      'Thread_LED': Sample thread
+ *      'Thread_Status': Status thread
  *---------------------------------------------------------------------------*/
 
-void Thread_LED (void const *argument);                                                                      
-osThreadDef (Thread_LED, osPriorityNormal, 1, 0);                   
+void Thread_Status (void const *argument);                                                                      
+osThreadDef (Thread_Status, osPriorityNormal, 1, 0);                   
 
-int Init_Thread_LED (void) {
+int Init_Thread_Status (void) {
 
-  tid_Thread_LED = osThreadCreate (osThread(Thread_LED), NULL);
-  if(!tid_Thread_LED) return(-1);
+  tid_Thread_Status = osThreadCreate (osThread(Thread_Status), NULL);
+  if(!tid_Thread_Status) return(-1);
 
   return(0);
 }
 
-void Thread_LED (void const *argument) {
+void Thread_Status (void const *argument) {
   uint32_t led_num    = 0;
 	uint32_t threadCounter = 0;
 	uint8_t led_state = 0;
@@ -67,8 +69,9 @@ void Thread_LED (void const *argument) {
 			led_state = 0;
 		}
 		
-    value = foo1.get_value_private();
+    value = Foo1.GetValue();
 		EventRecord2((EventRecorder_CID | 0x00), threadCounter, value);
+    EventRecordData(EventRecorder_Print, "Test01", 6);
 		    
     osThreadYield();                                               
   }
@@ -246,15 +249,15 @@ int main (void) {
   SystemCoreClockUpdate();
   LED_Initialize();                                                 
 	
-  Init_Thread_LED(); 
-	/*	
+  Init_Thread_Status(); 
+#if 0	
   Init_Thread_01();                                             
   Init_Thread_02();                                              
   Init_Thread_03();                                               
   Init_Thread_04();                                                
   Init_Thread_05();                                                
   Init_Thread_06();   
-	*/
+#endif
 
 
   osKernelStart ();                                                
@@ -265,18 +268,18 @@ int main (void) {
   
 	
   for (;;) {    
-    value = foo1.get_value_private();
-    foo1.set_value_private(++value);
+    value = Foo1.GetValue();
+    Foo1.SetValue(++value);
     osDelay(1000);				
-    osSignalSet(tid_Thread_LED, 0x0001);
-		/*
+    osSignalSet(tid_Thread_Status, 0x0001);
+#if 0
     osSignalSet(tid_Thread_01, 0x0001);
     osSignalSet(tid_Thread_02, 0x0001);
     osSignalSet(tid_Thread_03, 0x0001);
     osSignalSet(tid_Thread_04, 0x0001);
     osSignalSet(tid_Thread_05, 0x0001);
     osSignalSet(tid_Thread_06, 0x0001);
-		*/
+#endif
 		
   }
 }

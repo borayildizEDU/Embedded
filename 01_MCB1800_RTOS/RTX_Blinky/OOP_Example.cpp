@@ -2,14 +2,15 @@
 
 
 
-void Foo::set_value_private(int value){
-  value_private = value;
+void Foo::SetValue(int value){
+  this->value = value;
 }
 
-int Foo::get_value_private(void){
-  return value_private;
+int Foo::GetValue(void){
+  return value;
 }
 
-Foo::Foo(){
-  value_private = 1;
+// Default Constructor
+Foo::Foo(void){
+  value = 1;
 }

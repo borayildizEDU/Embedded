@@ -45,3 +45,14 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!*.cpp
+!*.c
+!*.h
+# ...even if they are in subdirectories
+!*/

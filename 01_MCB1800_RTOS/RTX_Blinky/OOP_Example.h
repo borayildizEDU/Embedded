@@ -1,10 +1,10 @@
 #pragma once
 
 class Foo{
-  int value_private;
+  int value;
   public:
-    void set_value_private(int value);
-    int get_value_private(void);
-    int value_public;
+    Foo();
+    int GetValue(void);
+    void SetValue(int value);
 };
 

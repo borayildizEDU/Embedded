@@ -3,29 +3,29 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.22.0.3
-Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Bora Yildiz, ARM, LIC=MGXAU-B5CJZ-QMXDI-RIXMU-GT95F-MZ3I9
+IDE-Version: µVision V5.23.0.35
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: bora Win, ARM, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.17.0.9
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 1 (build 61)
-Assembler:       Armasm.exe V5.06 update 1 (build 61)
-Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
-Library Manager: ArmAr.exe V5.06 update 1 (build 61)
-Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
-CPU DLL:         SARMCM3.DLL V5.17.0.9
-Dialog DLL:      DCM.DLL V1.13.4.0
-Target DLL:      ULP2CM3.DLL V2.203.3.0
-Dialog DLL:      TCM.DLL V1.14.6.0
+Toolchain:       MDK-Lite  Version: 5.23.0.11
+Toolchain Path:  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.23.0.11
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      ULP2CM3.DLL V2.207.14.0
+Dialog DLL:      TCM.DLL V1.29.0.0
  
 <h2>Project:</h2>
 E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\Blinky.uvprojx
-Project File Date:  11/18/2016
+Project File Date:  04/07/2017
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\ARMCC\Bin'
 Rebuild target 'EventRecorder'
 assembling startup_LPC18xx.s...
 compiling OOP_Example.cpp...
@@ -33,70 +33,70 @@ compiling LED_MCB1800.c...
 compiling retarget_io.c...
 compiling RTX_Conf_CM.c...
 Warning: C3910W: Old syntax, please use '--c99'.
-compiling GPIO_LPC18xx.c...
 compiling SCU_LPC18xx.c...
+compiling GPIO_LPC18xx.c...
 compiling EventRecorder.c...
 compiling Blinky.cpp...
 compiling system_LPC18xx.c...
 linking...
-Program Size: Code=12208 RO-data=1140 RW-data=100 ZI-data=31456  
-After Build - User command #1: C:\Keil_v5\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
-ELFDWT - Signature Creator V1.1.0.0
-COPYRIGHT Keil - An ARM Company, Copyright (C) 2014
-*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF20F6
+Program Size: Code=12284 RO-data=1144 RW-data=96 ZI-data=31452  
+After Build - User command #1: E:\KeilNightlyBuilds\2017_03_27__19_30\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.2.0.0
+COPYRIGHT Copyright (C) 2014-2016, ARM Ldt. and  ARM Germany GmbH
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF200E
 *** Processing completed, no Errors.
 ".\Flash\Blinky.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.0.0-Beta14.pack
-                ::CMSIS:RTOS:1.0 (API)
+                http://www.keil.com/pack/ARM.CMSIS.5.0.2-dev1.pack
+                ::CMSIS:RTOS:1.0.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: RTOS Version: 1.0
-   * Component: CORE Version: 5.0.0
+   * Component: RTOS Version: 1.0.0
+   * Component: CORE Version: 5.0.1
    * Component: Keil RTX Version: 4.81.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.ARM_Compiler.1.2.0-Dev9.pack
-                Keil.ARM Compiler::Compiler:I/O:STDIN:ITM:1.1.0
-                Keil ARM Compiler extensions
-   * Component: STDIN Variant: ITM Version: 1.1.0
-   * Component: STDOUT Variant: ITM Version: 1.1.0
-   * Component: STDERR Variant: ITM Version: 1.1.0
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.3.0.pack
+                Keil.ARM Compiler::Compiler:I/O:STDIN:ITM:1.2.0
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: STDIN Variant: ITM Version: 1.2.0
+   * Component: STDOUT Variant: ITM Version: 1.2.0
+   * Component: STDERR Variant: ITM Version: 1.2.0
    * Component: Event Recorder Variant: DAP Version: 1.1.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.LPC1800_DFP.2.7.0-dev16.pack
+                http://www.keil.com/pack/Keil.LPC1800_DFP.2.7.0.pack
                 Keil::Device:Startup:1.0.0
                 NXP LPC1800 Series Device Support, Drivers and Examples
    * Component: Startup Version: 1.0.0
-   * Component: SCU Version: 1.1
-   * Component: GPIO Version: 1.0
+   * Component: SCU Version: 1.1.0
+   * Component: GPIO Version: 1.0.0
    * Component: LED Version: 1.0.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.MDK-Middleware.7.3.0-dev10.pack
-                ::Board Support:LED:1.00 (API)
-                Keil MDK-ARM Professional Middleware for ARM Cortex-M based devices
-   * Component: LED Version: 1.00
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.4.1-dev11.pack
+                ::Board Support:LED:1.0.0 (API)
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: LED Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
-  E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Compiler
-  E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\Device\LPC1857
-  E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\RTE\_EventRecorder
-  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\Include
-  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta14\CMSIS\RTOS\RTX\INC
-  C:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.2.0-Dev8\Include
-  C:\Keil_v5\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\Device\Include
-  C:\Keil_v5\ARM\PACK\Keil\LPC1800_DFP\2.7.0-dev16\RTE_Driver
-  C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0-dev10\Board
+  .\RTE\Compiler
+  .\RTE\Device\LPC1857
+  .\RTE\_EventRecorder
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\ARM\CMSIS\5.0.2-dev1\CMSIS\Include
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\ARM\CMSIS\5.0.2-dev1\CMSIS\RTOS\RTX\INC
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\ARM_Compiler\1.3.0\Include
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\LPC1800_DFP\2.7.0\Device\Include
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\LPC1800_DFP\2.7.0\RTE_Driver
+  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\MDK-Middleware\7.4.1-dev11\Board
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ::CMSIS:RTOS:1.0 (API)
+   * Component: ::CMSIS:RTOS:1.0.0 (API)
 
-   * Component: ARM::CMSIS:CORE:5.0.0
+   * Component: ARM::CMSIS:CORE:5.0.1
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.0
       Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
@@ -113,13 +113,13 @@ Package Vendor: Keil
       Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
       Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
 
-   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:ITM:1.1.0
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:ITM:1.2.0
       Source file:   Source\retarget_io.c
 
-   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:ITM:1.1.0
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:ITM:1.2.0
       Source file:   Source\retarget_io.c
 
-   * Component: Keil.ARM Compiler::Compiler:I/O:STDERR:ITM:1.1.0
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDERR:ITM:1.2.0
       Source file:   Source\retarget_io.c
 
    * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.1.0
@@ -132,20 +132,20 @@ Package Vendor: Keil
       Source file:   Device\Source\system_LPC18xx.c
       Include file:  RTE_Driver\Config\RTE_Device.h
 
-   * Component: Keil::Device:SCU:1.1
+   * Component: Keil::Device:SCU:1.1.0
       Include file:  RTE_Driver\SCU_LPC18xx.h
       Source file:   RTE_Driver\SCU_LPC18xx.c
 
-   * Component: Keil::Device:GPIO:1.0
+   * Component: Keil::Device:GPIO:1.0.0
       Include file:  RTE_Driver\GPIO_LPC18xx.h
       Source file:   RTE_Driver\GPIO_LPC18xx.c
 
    * Component: Keil.MCB1800::Board Support:LED:1.0.0
       Source file:   Boards\Keil\MCB1800\Common\LED_MCB1800.c
 
-   * Component: ::Board Support:LED:1.00 (API)
+   * Component: ::Board Support:LED:1.0.0 (API)
       Include file:  Board\Board_LED.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
