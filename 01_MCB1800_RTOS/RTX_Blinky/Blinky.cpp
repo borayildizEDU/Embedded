@@ -241,6 +241,7 @@ void Thread_06 (void const *argument) {
  *----------------------------------------------------------------------------*/
 int main (void) {
   int i = 0;
+  char str[32];
   
   osKernelInitialize ();                                          
   SystemCoreClockUpdate();
@@ -290,8 +291,11 @@ int main (void) {
 //		EventRecordData(EventRecorder_Print, "Test01", 6);
 
       i++;
-      printf("The value of i is %d\n", i);
+      printf("Enter a string: \n");
+      scanf("%s", str); 
+      printf("String is: %s\n", str);
       osDelay(1000);
+      
       
 
   }
