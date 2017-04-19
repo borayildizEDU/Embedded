@@ -47,15 +47,9 @@ Temporary Items
 .apdisk
 
 # Ignore everything 
-/*
+*
 
-# Ignore sub folders 
-Flash/
 
-# But not these files...
-!.gitignore
-!*.cpp
-!*.h
 
 
 
