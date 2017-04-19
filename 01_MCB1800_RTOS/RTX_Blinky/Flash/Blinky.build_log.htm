@@ -3,54 +3,55 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.23.0.35
+IDE-Version: µVision V5.23.0.47
 Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: bora Win, ARM, LIC=----
+License Information: bora Win, ARM, LIC=V85D0-VD4I6-81JW1-AZN37-X9RMT-7KG3X
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.23.0.11
-Toolchain Path:  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\ARMCC\Bin
+Toolchain:       MDK-ARM Professional  Version: 5.22
+Toolchain Path:  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 4 (build 422)
 Assembler:       Armasm.exe V5.06 update 4 (build 422)
 Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
 Library Manager: ArmAr.exe V5.06 update 4 (build 422)
 Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
-CPU DLL:         SARMCM3.DLL V5.23.0.11
-Dialog DLL:      DCM.DLL V1.16.0.0
-Target DLL:      ULPL2CM3.dll V0.0.16.0
-Dialog DLL:      TCM.DLL V1.29.0.0
+CPU DLL:         SARMCM3.DLL V5.22
+Dialog DLL:      DCM.DLL V1.13.9.0
+    Target DLL: ULPL2CM3.dll
+Dialog DLL:      TCM.DLL V1.21.0.0
  
 <h2>Project:</h2>
 E:\Git\borayildizEDU\Embedded\01_MCB1800_RTOS\RTX_Blinky\Blinky.uvprojx
 Project File Date:  04/18/2017
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\ARMCC\Bin'
 Rebuild target 'EventRecorder'
 assembling startup_LPC18xx.s...
 compiling OOP_Example.cpp...
-compiling retarget_io.c...
 compiling LED_MCB1800.c...
+compiling retarget_io.c...
 compiling RTX_Conf_CM.c...
 Warning: C3910W: Old syntax, please use '--c99'.
-compiling GPIO_LPC18xx.c...
+compiling SingleLinkedList.cpp...
 compiling SCU_LPC18xx.c...
+compiling GPIO_LPC18xx.c...
+compiling system_LPC18xx.c...
 compiling Blinky.cpp...
 compiling EventRecorder.c...
-compiling system_LPC18xx.c...
 linking...
-Program Size: Code=12392 RO-data=1144 RW-data=96 ZI-data=31452  
-After Build - User command #1: E:\KeilNightlyBuilds\2017_03_27__19_30\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
+Program Size: Code=13644 RO-data=1156 RW-data=140 ZI-data=31456  
+After Build - User command #1: E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\\ARM\BIN\ElfDwT.exe .\Flash\Blinky.axf BASEADDRESS(0x1A000000)
 ELFDWT - Signature Creator V1.2.0.0
 COPYRIGHT Copyright (C) 2014-2016, ARM Ldt. and  ARM Germany GmbH
-*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF1D86
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FF1D0E
 *** Processing completed, no Errors.
 ".\Flash\Blinky.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.0.2-dev1.pack
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
                 ::CMSIS:RTOS:1.0.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
    * Component: RTOS Version: 1.0.0
@@ -76,7 +77,7 @@ Package Vendor: Keil
    * Component: LED Version: 1.0.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.MDK-Middleware.7.4.1-dev11.pack
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.4.0.pack
                 ::Board Support:LED:1.0.0 (API)
                 Middleware for Keil MDK-Professional and MDK-Plus
    * Component: LED Version: 1.0.0
@@ -85,12 +86,12 @@ Package Vendor: Keil
   .\RTE\Compiler
   .\RTE\Device\LPC1857
   .\RTE\_EventRecorder
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\ARM\CMSIS\5.0.2-dev1\CMSIS\Include
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\ARM\CMSIS\5.0.2-dev1\CMSIS\RTOS\RTX\INC
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\ARM_Compiler\1.3.0\Include
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\LPC1800_DFP\2.7.0\Device\Include
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\LPC1800_DFP\2.7.0\RTE_Driver
-  E:\KeilNightlyBuilds\2017_03_27__19_30\ARM\PACK\Keil\MDK-Middleware\7.4.1-dev11\Board
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\RTOS\RTX\INC
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1.3.0\Include
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.7.0\Device\Include
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\LPC1800_DFP\2.7.0\RTE_Driver
+  E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\MDK-Middleware\7.4.0\Board
 
 <h2>Collection of Component Files used:</h2>
 
@@ -145,7 +146,7 @@ Package Vendor: Keil
 
    * Component: ::Board Support:LED:1.0.0 (API)
       Include file:  Board\Board_LED.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
