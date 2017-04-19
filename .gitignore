@@ -62,3 +62,6 @@ RTX_Blinky/Flash/
 
 
 
+*.axf
+*.htm
+*.o
