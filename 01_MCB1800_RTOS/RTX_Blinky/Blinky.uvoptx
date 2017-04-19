@@ -566,6 +566,11 @@
         <Type></Type>
         <SubType>1</SubType>
       </ScvdList>
+      <ScvdPack>
+        <Filename>E:\KeilNightlyBuilds\2016_11_11__13_30_RELEASE\ARM\PACK\Keil\ARM_Compiler\1.3.0\EventRecorder.scvd</Filename>
+        <Type>Keil.ARM_Compiler.1.3.0</Type>
+        <SubType>1</SubType>
+      </ScvdPack>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
