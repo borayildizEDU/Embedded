@@ -46,22 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Ignore everything 
-*
-
-# Ignore sub folders 
-RTX_Blinky/Flash/
-
-# But not these files...
-!.gitignore
-!*.cpp
-!*.h
-
-
-
-
-
 
 *.axf
 *.htm
 *.o
+
