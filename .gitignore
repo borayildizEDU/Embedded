@@ -217,3 +217,9 @@ pip-log.txt
 *.axf
 *.htm
 *.o
+*.d
+*.map
+*.lnp
+*.dep
+*.lst
+*.sct
