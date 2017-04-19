@@ -50,7 +50,7 @@ Temporary Items
 *
 
 # Ignore sub folders 
-01_MCB1800_RTOS/RTX_Blinky/Flash/
+RTX_Blinky/Flash/
 
 # But not these files...
 !.gitignore
