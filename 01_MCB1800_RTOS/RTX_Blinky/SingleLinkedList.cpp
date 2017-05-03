@@ -21,45 +21,47 @@ using namespace std;
  * List Class
  *----------------------------------------------------------------------------*/
 int List::Print(){
-	Node *ptrHead = head;
+	NODE *ptrHead = head;
 	string str;
 	
 	// No nodes
-	if(ptrHead == NULL){
-		//EventRecorderPrint("The list is empty.");
+	if(head == NULL){
+    printf("The list is empty.\n");
 		return count;
 	}
 	
-	while(ptrHead->next != NULL){		
-		//EventRecorderPrint(ptrHead->data);
+  printf("%d\n", ptrHead->data);
+	while(ptrHead->next != NULL){		    
 		ptrHead = ptrHead->next;		
+    printf("%d\n", ptrHead->data);
 	}
 	
+  
 	return count;
 }
 
-int List::Append(int data){
-	Node* ptrHead = head;
-	// Create a new node
-	Node* ptrNewNode = new Node();
-	ptrNewNode->SetData(data);
+int List::Append(int data){  
+  NODE *ptrHead = head;
+	NODE* ptrNewNode = new NODE();
+	ptrNewNode->data = data;
 	
-	if(ptrHead == NULL){
-		ptrHead = ptrNewNode;
-		count++;
-		return ++count;
+	if(head == NULL){
+		head = ptrNewNode;
+    count++;
+		return count;
 	}
 	
 	while(ptrHead->next != NULL){		
 		ptrHead = ptrHead->next;
 	}
 	ptrHead->next = ptrNewNode;
-	return ++count;	
+  count++;
+	return count;	
 }
 
 int List::Delete(int data){
-	Node* ptrHead = head;
-	Node* ptrDelete = NULL;
+	NODE* ptrHead = head;
+	NODE* ptrDelete = NULL;
 	int initialCount = count;
 	
 	if(ptrHead == NULL){		
@@ -67,7 +69,7 @@ int List::Delete(int data){
 	}
 	
 	while(ptrHead->next != NULL){
-		if(ptrHead->next->GetData() == data){
+		if(ptrHead->next->data == data){
 			ptrDelete = ptrHead->next;
 			ptrHead->next = ptrDelete->next;
 			delete ptrDelete;
@@ -77,7 +79,7 @@ int List::Delete(int data){
 			ptrHead = ptrHead->next;
 		}		
 	}
-	if(ptrHead->GetData() == data){
+	if(ptrHead->data == data){
 		delete ptrHead;
 		--count;
 	}
@@ -88,7 +90,7 @@ int List::Delete(int data){
 }
 
 void List::Test(void){
-	for(int i = 0; i < 4; i++) Append(1);
+	for(int i = 0; i < 4; i++) Append(i);
 	Print();
 	Delete(1);
 	Print();

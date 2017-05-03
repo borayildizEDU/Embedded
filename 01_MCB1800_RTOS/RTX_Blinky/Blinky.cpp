@@ -240,9 +240,7 @@ void Thread_06 (void const *argument) {
  * main: blink LED and check button state
  *----------------------------------------------------------------------------*/
 int main (void) {
-  int i = 0;
-  char str[32];
-  
+ 
   osKernelInitialize ();                                          
   SystemCoreClockUpdate();
   LED_Initialize();                                                 
@@ -256,47 +254,34 @@ int main (void) {
   Init_Thread_05();                                                
   Init_Thread_06();   
 
-
   osKernelStart ();                                                
 	
 	EventRecorderInitialize(EventRecordAll, 1);
   EventRecorderStop();
   EventRecorderStart();
-  
-	
+  	
   for (;;) {    
     
-//    osDelay(1000);				
-//    osSignalSet(tid_Thread_Status, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_01, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_02, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_03, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_04, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_05, 0x0001);
-//		
-//		osDelay(1000);
-//    osSignalSet(tid_Thread_06, 0x0001);
+    osDelay(1000);				
+    osSignalSet(tid_Thread_Status, 0x0001);
 		
-//		osDelay(1000);
-//		EventRecordData(EventRecorder_Print, "Test01", 6);
-
-      i++;
-      printf("Enter a string: \n");
-      scanf("%s", str); 
-      printf("String is: %s\n", str);
-      osDelay(1000);
-      
-      
-
+		osDelay(1000);
+    osSignalSet(tid_Thread_01, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_02, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_03, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_04, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_05, 0x0001);
+		
+		osDelay(1000);
+    osSignalSet(tid_Thread_06, 0x0001);
+		
   }
 }

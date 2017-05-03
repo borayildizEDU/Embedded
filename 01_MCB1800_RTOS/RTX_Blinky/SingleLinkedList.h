@@ -1,19 +1,15 @@
 #pragma once
 
-// Node class
-class Node{
-	int data;
-	
-	public:
-		Node* next;
-		Node(){};
-		void 	SetData(int Data) {data = Data;};
-		int 	GetData() {return data;};		
-};
+
+typedef struct node_t{
+  int data;
+  node_t *next;
+}NODE;
+
 
 // List class
 class List{
-	Node *head;
+	NODE *head;
 	int count;
 	
 	public:
